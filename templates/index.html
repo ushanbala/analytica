@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Analytica — YouTube Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header>
+    <h1>ANALYTICA</h1>
+  </header>
+
+  <main>
+    <section class="input-section">
+      <input id="channel-url" type="url" placeholder="Enter YouTube channel URL..." />
+      <button onclick="addChannel()">ADD</button>
+    </section>
+
+    <section id="channels"></section>
+
+    <section id="progress-container" style="display:none;">
+      <div id="progress-bar"></div>
+      <p id="progress-text"></p>
+    </section>
+
+    <section class="filter-section">
+      <input id="search" type="search" placeholder="Search videos..." oninput="filterVideos()" />
+      <select id="sort" onchange="sortVideos()">
+        <option value="">Sort by...</option>
+        <option value="views">Most Views</option>
+        <option value="likes">Most Likes</option>
+        <option value="duration">Longest Duration</option>
+        <option value="recent">Most Recent</option>
+      </select>
+    </section>
+
+    <section id="analytics">
+      <h2>Channel Analytics</h2>
+      <div id="analytics-content">No data yet.</div>
+    </section>
+
+    <section id="videos"></section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
